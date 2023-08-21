@@ -4,48 +4,53 @@ Instructions: Ellison Private Elementary School has three classrooms in each of 
 
 
 Pseudocode:
-          BEGIN
-            DECLARE grade = 0
-            DECLARE classroom = 1
-            DECLARE monthNumber = 1
-            DECLARE kndrgrtn_tuition = 80
-            DECLARE month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-            WHILE grade < 9
 
-              // kindergarten
-              IF grade < 1
-                PRINT "Kindergarten"
-                WHILE classroom < 4
-                  PRINT "Classroom " + classroom
-                  monthNumber = 1  // Reset monthNumber for each classroom
-                  WHILE monthNumber < 10
-                    PRINT "Month " + month[monthNumber - 1]  // Adjusted index
-                    PRINT "Tuition " + kndrgrtn_tuition
-                    monthNumber = monthNumber + 1
+
+
+
+            BEGIN
+              DECLARE grade = 0
+              DECLARE classroom = 1
+              DECLARE monthNumber = 1
+              DECLARE kndrgrtn_tuition = 80
+              DECLARE month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+              WHILE grade < 9
+
+                // kindergarten
+                IF grade < 1
+                  PRINT "Kindergarten"
+                  WHILE classroom < 4
+                    PRINT "Classroom " + classroom
+                    monthNumber = 1  // Reset monthNumber for each classroom
+                    WHILE monthNumber < 10
+                      PRINT "Month " + month[monthNumber - 1]  // Adjusted index
+                      PRINT "Tuition " + kndrgrtn_tuition
+                      monthNumber = monthNumber + 1
+                    ENDWHILE
+
+                    classroom = classroom + 1
                   ENDWHILE
 
-                  classroom = classroom + 1
-                ENDWHILE
+                // grade 1 through 8
+                else
+                  PRINT "Grade " + grade
+                  WHILE classroom < 4
+                    PRINT "Classroom " + classroom
+                    monthNumber = 1  // Reset monthNumber for each classroom
+                    DECLARE tuition = 60 * grade
+                    WHILE monthNumber < 10
+                      PRINT "Month " + month[monthNumber - 1]  // Adjusted index
+                      PRINT "Tuition " + tuition
+                      monthNumber = monthNumber + 1
+                    ENDWHILE
 
-              // grade 1 through 8
-              else
-                PRINT "Grade " + grade
-                WHILE classroom < 4
-                  PRINT "Classroom " + classroom
-                  monthNumber = 1  // Reset monthNumber for each classroom
-                  DECLARE tuition = 60 * grade
-                  WHILE monthNumber < 10
-                    PRINT "Month " + month[monthNumber - 1]  // Adjusted index
-                    PRINT "Tuition " + tuition
-                    monthNumber = monthNumber + 1
+                    classroom = classroom + 1
                   ENDWHILE
+                ENDIF
 
-                  classroom = classroom + 1
-                ENDWHILE
-              ENDIF
-
-              // flag variable
-              grade = grade + 1 
-            ENDWHILE
-          END
+                // flag variable
+                grade = grade + 1 
+              ENDWHILE
+            END
